@@ -15,7 +15,7 @@ import java.util.List;
 public class Category implements Serializable{
     @Id
     @GeneratedValue
-    private Long id;
+    private Long idCategory;
     @Column
     private String categoryName;
 
@@ -23,5 +23,6 @@ public class Category implements Serializable{
     private List<Product> products;
 
     @ManyToOne
+    @JoinColumn(name = "idDetail")
     private Detail detail;
 }

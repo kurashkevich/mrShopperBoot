@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="`Order`")
+@Table(name="`ORDER_TABLE`")
 public class Order implements Serializable{
     @Id
     @GeneratedValue
@@ -21,6 +21,7 @@ public class Order implements Serializable{
     private Double finalAmount;
 
     @ManyToOne
+    @JoinColumn(name = "idUser")
     private User user;
 
     @OneToMany(mappedBy = "order")

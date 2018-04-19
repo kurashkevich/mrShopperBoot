@@ -15,7 +15,7 @@ import java.util.List;
 public class UserRole implements Serializable{
     @Id
     @GeneratedValue
-    private Long id;
+    private Long idUserRole;
     @Column
     private String role;
 

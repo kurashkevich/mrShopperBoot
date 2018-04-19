@@ -15,7 +15,7 @@ import java.util.List;
 public class Detail implements Serializable {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long idDetail;
     @Column
     private String name;
     @Column

@@ -15,8 +15,7 @@ import java.util.Date;
 public class Product implements Serializable {
     @Id
     @GeneratedValue
-    private Long id;
-    //category id
+    private Long idProduct;
     @Column
     private Integer count; // количество на складе
     @Column
@@ -27,8 +26,10 @@ public class Product implements Serializable {
     private Date developedDate; //дата изготовления
 
     @ManyToOne
+    @JoinColumn(name = "idOrder")
     private Order order;
 
     @ManyToOne
+    @JoinColumn(name = "idCategory")
     private Category category;
 }
