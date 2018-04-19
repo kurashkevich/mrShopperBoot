@@ -29,5 +29,12 @@ public class Detail implements Serializable {
    @ManyToMany(mappedBy = "details", cascade = CascadeType.ALL)
    private List<Category> categories = new ArrayList<>();
 
-
+    @Override
+    public String toString() {
+        return "Detail{" +
+                "name='" + name + '\'' +
+                ", unit='" + unit + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

@@ -1,5 +1,6 @@
 package com.mrshopper.project.service;
 
+import com.mrshopper.project.entity.Detail;
 import com.mrshopper.project.entity.Product;
 import com.mrshopper.project.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,8 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public String getProductById(Long id){
-        return productRepository.findById(id).toString();
+    public Product getProductById(Long id){
+        return productRepository.findById(id).orElse(null);
     }
+    
 }

@@ -33,4 +33,15 @@ public class Product implements Serializable {
     @JoinColumn(name = "idCategory")
     private Category category;
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "idProduct=" + idProduct +
+                ", count=" + count +
+                ", price=" + price +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", developedDate=" + developedDate +
+                ", category=" + category.getCategoryName()  +
+                '}';
+    }
 }
