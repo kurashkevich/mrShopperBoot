@@ -1,13 +1,13 @@
 package com.mrshopper.project.controller;
 
-import com.mrshopper.project.service.DetailService;
+import com.mrshopper.project.service.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/details")
-public class DetailController {
+@RequestMapping("/roles")
+public class UserRoleController {
     @Autowired
-    private DetailService detailService;
+    private UserRoleService userRoleService;
 }
