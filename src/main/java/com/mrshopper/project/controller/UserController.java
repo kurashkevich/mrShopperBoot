@@ -28,17 +28,5 @@ public class UserController {
     public User saveUserStas(){
         return userService.save(new User( "stas", "konkov", "kon'", "pass", "konkov@mail.ru"));
     }
-   /* @GetMapping("/save/vlad")
-    public User saveUserVlad(){
-        return userService.save(new User(null, "vlad", "kurash", "vlad'", "pass", "kur@mail.ru"));
-    }
-    @GetMapping("/save/igor")
-    public User saveUserIgor(){
-        return userService.save(new User(null, "igot", "tishko", "igor'", "pass", "tish@mail.ru"));
-    }*/
-
-
-
-
 
 }

@@ -17,15 +17,15 @@ public class User implements Serializable {
     @Id
     @GeneratedValue
     private Long idUser;
-    @Column
+    @Column()
     private String firstName;
-    @Column
+    @Column(name = "LAST_NAME")
     private String lastName;
-    @Column
+    @Column(name = "LOGIN")
     private String login;
-    @Column
+    @Column(name = "PASSWORD")
     private String password;
-    @Column
+    @Column(name = "EMAIL")
     private String email;
 
     @OneToMany(mappedBy = "user")

@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -23,8 +24,10 @@ public class Detail implements Serializable {
     @Column
     private String description;
 
-    @OneToMany(mappedBy = "detail")
-    private List<Category> categoryList;
+   /* @OneToMany(mappedBy = "detail")
+    private List<Category> categoryList;*/
+   @ManyToMany(mappedBy = "details", cascade = CascadeType.ALL)
+   private List<Category> categories = new ArrayList<>();
 
 
 }
