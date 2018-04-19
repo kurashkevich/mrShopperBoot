@@ -17,24 +17,27 @@ public class Detail implements Serializable {
     @Id
     @GeneratedValue
     private Long idDetail;
-    @Column
-    private String name;
-    @Column
-    private String unit;   // единицы измерения
-    @Column
+    private String model; //iphone 8
+    private String os; //ios
+    private String rom;
+    private String ram;
+    private String screenSize;
     private String description;
 
-   /* @OneToMany(mappedBy = "detail")
-    private List<Category> categoryList;*/
-   @ManyToMany(mappedBy = "details", cascade = CascadeType.ALL)
-   private List<Category> categories = new ArrayList<>();
+    @OneToMany(mappedBy = "detail")
+    private List<Product> products;
 
     @Override
     public String toString() {
         return "Detail{" +
-                "name='" + name + '\'' +
-                ", unit='" + unit + '\'' +
+                "idDetail=" + idDetail +
+                ", model='" + model + '\'' +
+                ", os='" + os + '\'' +
+                ", rom='" + rom + '\'' +
+                ", ram='" + ram + '\'' +
+                ", screenSize='" + screenSize + '\'' +
                 ", description='" + description + '\'' +
+                ", products=" + products.size() +
                 '}';
     }
 }

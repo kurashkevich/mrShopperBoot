@@ -27,9 +27,5 @@ public class ProductController {
         return productService.getProductById(id).toString();
     }
 
-    @GetMapping("/{id}/details")
-    public String getProductDetails(@PathVariable Long id){
-        return "asd";
-    }
 
 }

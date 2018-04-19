@@ -30,8 +30,8 @@ public class Product implements Serializable {
     private Order order;
 
     @ManyToOne
-    @JoinColumn(name = "idCategory")
-    private Category category;
+    @JoinColumn(name = "idDetail")
+    private Detail detail;
 
     @Override
     public String toString() {
@@ -41,7 +41,8 @@ public class Product implements Serializable {
                 ", price=" + price +
                 ", manufacturer='" + manufacturer + '\'' +
                 ", developedDate=" + developedDate +
-                ", category=" + category.getCategoryName()  +
+                ", order=" + order.getUser().getLogin() +
+                ", detail=" + detail.getModel() +
                 '}';
     }
 }
