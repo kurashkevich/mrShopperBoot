@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="`ORDER_TABLE`")
+@Table(name="`order`")
 public class Order implements Serializable{
     @Id
     @GeneratedValue
