@@ -3,6 +3,7 @@ package com.mrshopper.project.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@ToString
 public class User implements Serializable {
     @Id
     @GeneratedValue
@@ -39,4 +41,17 @@ public class User implements Serializable {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "idUser=" + idUser +
+                ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", orders_count=" + orders.size() +
+                ", userRole=" + userRole.getRole() +
+                '}';
+    }
 }

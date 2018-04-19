@@ -32,4 +32,5 @@ public class Product implements Serializable {
     @ManyToOne
     @JoinColumn(name = "idCategory")
     private Category category;
+
 }

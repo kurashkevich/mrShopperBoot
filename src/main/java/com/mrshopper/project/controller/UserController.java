@@ -14,13 +14,13 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/users")
-    public List<User> getAllUsers(){
-        return userService.getAllUsers();
+    public String getAllUsers(){
+        return userService.getAllUsers().toString();
     }
 
     @GetMapping("/users/{id}")
-    public User getUserById(@PathVariable Long id){
-        return userService.getUserById(id);
+    public String getUserById(@PathVariable Long id){
+        return userService.getUserById(id).toString();
     }
 
     @GetMapping("/save/stas")
