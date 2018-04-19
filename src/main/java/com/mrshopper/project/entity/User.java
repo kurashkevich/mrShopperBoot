@@ -17,16 +17,12 @@ public class User implements Serializable {
     @Id
     @GeneratedValue
     private Long idUser;
-    @Column
-    private String firstName;
-    @Column(name = "LAST_NAME")
-    private String lastName;
-    @Column(name = "LOGIN")
-    private String login;
-    @Column(name = "PASSWORD")
-    private String password;
-    @Column(name = "EMAIL")
     private String email;
+    private String firstName;
+    private String lastName;
+    private String login;
+    private String password;
+
 
     @OneToMany(mappedBy = "user")
     private List<Order> orders = new ArrayList<>();
@@ -35,7 +31,7 @@ public class User implements Serializable {
     @JoinColumn(name = "idUserRole")
     private UserRole userRole;
 
-    public User(String firstName, String lastName, String login, String password, String email) {
+    public User(String email, String firstName, String lastName, String login, String password ) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.login = login;
