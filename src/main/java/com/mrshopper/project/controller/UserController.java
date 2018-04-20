@@ -23,9 +23,5 @@ public class UserController {
         return userService.getUserById(id).toString();
     }
 
-    @GetMapping("/save/stas")
-    public User saveUserStas(){
-        return userService.save(new User( "email", "firstname", "lastname'", "pass", "konkov@mail.ru"));
-    }
 
 }

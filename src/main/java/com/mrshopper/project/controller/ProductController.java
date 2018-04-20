@@ -18,13 +18,14 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/")
-    public String getProducts(){
-        return productService.getProducts().toString();
+    public List<Product> getProducts(){
+        return productService.getProducts();
     }
 
     @GetMapping("/{id}")
-    public String getProductById(@PathVariable Long id){
-        return productService.getProductById(id).toString();
+    public Product getProductById(@PathVariable Long id){
+
+        return productService.getProductById(id);
     }
 
 

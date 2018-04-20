@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@ToString
+@ToString(exclude = "userRole, orders")
 public class User implements Serializable {
     @Id
     @GeneratedValue
@@ -39,19 +39,5 @@ public class User implements Serializable {
         this.login = login;
         this.password = password;
         this.email = email;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "idUser=" + idUser +
-                ", email='" + email + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", orders_count=" + orders.size() +
-                ", userRole=" + userRole.getRole() +
-                '}';
     }
 }
