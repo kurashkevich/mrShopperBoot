@@ -1,5 +1,6 @@
 package com.mrshopper.project.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@ToString(exclude = "userRole, orders")
 public class User implements Serializable {
     @Id
     @GeneratedValue
@@ -27,10 +27,12 @@ public class User implements Serializable {
 
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Order> orders = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "idUserRole")
+    @JsonIgnore
     private UserRole userRole;
 
     public User(String email, String firstName, String lastName, String login, String password ) {
@@ -39,5 +41,17 @@ public class User implements Serializable {
         this.login = login;
         this.password = password;
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "idUser=" + idUser +
+                ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

@@ -1,0 +1,5 @@
+[{"idProduct":1,"count":100,"price":1200.0,"manufacturer":"Apple","developedDate":"2017-06-14T21:00:00.000+0000"},
+  {"idProduct":2,"count":150,"price":1470.0,"manufacturer":"Samsung","developedDate":"2016-05-11T21:00:00.000+0000"},
+  {"idProduct":3,"count":90,"price":720.0,"manufacturer":"Xiomi","developedDate":"2015-12-10T21:00:00.000+0000"},
+  {"idProduct":4,"count":73,"price":350.0,"manufacturer":"Huaway","developedDate":"2018-11-08T21:00:00.000+0000"},
+  {"idProduct":5,"count":268,"price":900.0,"manufacturer":"Apple","developedDate":"2013-07-05T21:00:00.000+0000"}]

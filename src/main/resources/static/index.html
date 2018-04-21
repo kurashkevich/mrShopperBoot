@@ -5,11 +5,18 @@
     <title>Title</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
     <script>
-        alert("asd");
-
+        function UserAction() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "http://localhost:8080/products/", true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+            xhttp.send();
+            var response = JSON.parse(xhttp.responseText);
+            alert("sad");
+        }
     </script>
 </head>
 <body>
     <a href="/products/">Get products</a>
+    <button type="submit" onclick="UserAction()">Search</button>
 </body>
 </html>

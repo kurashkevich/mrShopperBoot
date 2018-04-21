@@ -1,8 +1,10 @@
 package com.mrshopper.project.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -27,10 +29,12 @@ public class Product implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "idOrder")
+    @JsonIgnore
     private Order order;
 
     @ManyToOne
     @JoinColumn(name = "idDetail")
+    @JsonIgnore
     private Detail detail;
 
     @Override
@@ -41,8 +45,6 @@ public class Product implements Serializable {
                 ", price=" + price +
                 ", manufacturer='" + manufacturer + '\'' +
                 ", developedDate=" + developedDate +
-                ", order=" + order.getUser().getLogin() +
-                ", detail=" + detail.getModel() +
                 '}';
     }
 }

@@ -1,5 +1,6 @@
 package com.mrshopper.project.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@ToString(exclude = "products")
 public class Detail implements Serializable {
     @Id
     @GeneratedValue
@@ -27,7 +27,20 @@ public class Detail implements Serializable {
     private String description;
 
     @OneToMany(mappedBy = "detail")
+    @JsonIgnore
     private List<Product> products;
 
-
+    @Override
+    public String toString() {
+        return "Detail{" +
+                "idDetail=" + idDetail +
+                ", model='" + model + '\'' +
+                ", os='" + os + '\'' +
+                ", rom='" + rom + '\'' +
+                ", ram='" + ram + '\'' +
+                ", screenSize='" + screenSize + '\'' +
+                ", description='" + description + '\'' +
+                ", products.json=" + products.size() +
+                '}';
+    }
 }

@@ -1,5 +1,6 @@
 package com.mrshopper.project.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@ToString(exclude = "product")
 @Table(name="`order`")
 public class Order implements Serializable{
     @Id
@@ -24,9 +24,18 @@ public class Order implements Serializable{
 
     @ManyToOne
     @JoinColumn(name = "idUser")
+    @JsonIgnore
     private User user;
 
     @OneToMany(mappedBy = "order")
+    @JsonIgnore
     private List<Product> product;
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "idOrder=" + idOrder +
+                ", finalAmount=" + finalAmount +
+                '}';
+    }
 }
