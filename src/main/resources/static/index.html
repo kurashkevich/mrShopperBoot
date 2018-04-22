@@ -3,20 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
-    <script>
-        function UserAction() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.open("GET", "http://localhost:8080/products/", true);
-            xhttp.setRequestHeader("Content-type", "application/json");
-            xhttp.send();
-            var response = JSON.parse(xhttp.responseText);
-            alert("sad");
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        function printProducts(data){
+            var allProducts = JSON.parse(data);
+            console.log(allProducts);
+
         }
-    </script>
-</head>
+
+            function getProducts(url, callback){
+
+
+
+                new Promise(function(resolve, reject){
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("GET", url);
+                    xhr.onload = function(){
+                        resolve(xhr.responseText);
+                    };
+                    xhr.onerror = function(){
+                        reject(xhr.statusText)
+                    };
+                    xhr.send();
+
+                }).then(function (result) {
+                    callback(result);
+                });
+
+
+
+            }
+            document.addEventListener("click", function(e){
+                e.preventDefault();
+                if(e.target.classList.contains("btn_get-products")){
+                    getProducts(e.target.getAttribute("href"), printProducts);
+                }
+            });
+
+
+        // jQuery.ajax({
+        //   type: 'GET',
+        // url:  url,
+        //dataType: 'json',
+        //async: true,
+        //success: function(result) {
+        //   resultData = result;
+        //},
+        //error: function(jqXHR, textStatus, errorThrown) {
+        //  console.error(jqXHR.status + ' ' + jqXHR.responseText);
+        //}
+        //});
+
+</script>
+
 <body>
-    <a href="/products/">Get products</a>
-    <button type="submit" onclick="UserAction()">Search</button>
+    <a class="btn btn_get-products" href="/products/">Get products</a>
 </body>
 </html>
+
+
