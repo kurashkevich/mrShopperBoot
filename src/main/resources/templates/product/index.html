@@ -12,16 +12,22 @@
                 <tr>
                     <th>id</th>
                     <th>производитель</th>
+                    <th>модель</th>
+                    <th>рам</th>
+                    <th>ром</th>
+                    <th>размер экрана</th>
                     <th>цена</th>
                     <th>Количество на складе</th>
-                    <th>деталька</th>
                 </tr>
                 <tr>
                     <td th:text="${product.idProduct}"></td>
                     <td th:text="${product.manufacturer}">...</td>
+                    <td th:text="${product.detail.model}">...</td>
+                    <td th:text="${product.detail.rom}">...</td>
+                    <td th:text="${product.detail.ram}">...</td>
+                    <td th:text="${product.detail.screenSize}">...</td>
                     <td th:text="${product.price}">...</td>
                     <td th:text="${product.count}">...</td>
-                    <td th:text="${product.detail.idDetail}">...</td>
                     <td><a th:href="'/nonRestDetail?id=' + ${product.detail.idDetail}">подробнее</a></td>
 
                 </tr>
