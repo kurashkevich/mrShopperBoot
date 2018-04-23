@@ -4,7 +4,7 @@ insert into DETAIL values (2, 'very good android', 'galaxy s8', 'android', '16gb
 insert into DETAIL values (3, 'very good android', 'mi6', 'android', '16gb', '128gb', '4.5');
 insert into DETAIL values (4, 'very good android', 'p8', 'android', '4gb', '32gb', '5.3');
 insert into DETAIL values (5, 'very good iphone', 'iphone 5s', 'ios', '8gb', '16gb', '5');
-
+insert into DETAIL values (6, 'very good iphone', null, 'ios', '8gb', '16gb', '5');
 
 
 
@@ -40,6 +40,7 @@ insert into Product values (2, 150, '2016-05-12','Samsung', 1470, 2, 2);
 insert into Product values (3, 90, '2015-12-11','Xiomi', 720, 3, 3);
 insert into Product values (4, 73, '2018-11-09','Huaway', 350, 4, 3);
 insert into Product values (5, 268, '2013-07-06','Apple', 900, 5, 1);
+insert into Product values (6, 268, null,'Apple', null, 6, 1);
 /*insert into Product values (6, 244, '2014-03-02','Apple', 1450, 1, 1);
 insert into Product values (7, 156, '2016-06-01','Apple', 1600, 1, 1);
 insert into Product values (8, 33, '2015-09-03','LG', 600, 1, 1);

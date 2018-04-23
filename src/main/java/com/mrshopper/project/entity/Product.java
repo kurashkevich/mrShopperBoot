@@ -7,8 +7,10 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.Date;
+
 
 @Data
 @AllArgsConstructor

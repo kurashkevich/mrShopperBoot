@@ -13,5 +13,8 @@ public class DetailService {
     public Detail getProductById(Long id){
         return detailRepository.findById(id).orElse(null);
     }
+    public Detail save(Detail detail){
+        return detailRepository.save(detail);
+    }
 
 }

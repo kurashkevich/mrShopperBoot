@@ -38,4 +38,8 @@ public class ProductService {
         return productRepository.save(product);
     }
 
+    public Long deleteProduct(Long idProduct){
+        return productRepository.deleteByIdProduct(idProduct);
+    }
+
 }
