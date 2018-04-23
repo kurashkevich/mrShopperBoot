@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add product</title>
+</head>
+<body>
+    <div>
+        <form method="post" action="/nonRestProducts/create/product">
+
+            <h2>Добавить продукт</h2>
+            <div><input th:type="text" name="manufacturer" placeholder="manufacturer"></div>
+                <div><input type="text" name="price" placeholder="price"></div>
+                <div><input type="text" name="count" placeholder="count"></div>
+
+                <div><input type="text" name="model" placeholder="model"></div>
+                <div><input type="text" name="os" placeholder="os"></div>
+                <div><input type="text" name="rom" placeholder="rom"></div>
+                <div><input type="text" name="ram" placeholder="ram"></div>
+                <div> <input type="text" name="screenSize" placeholder="screenSize"></div>
+                <div> <input type="text" name="description" placeholder="description"></div>
+
+                <div><input type="submit" th:value="submit"></div>
+
+        </form>
+    </div>
+
+    <a href="/nonRestProducts">our products</a>
+</body>
+</html>

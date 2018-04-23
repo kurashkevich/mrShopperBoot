@@ -6,6 +6,7 @@ import com.mrshopper.project.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -20,10 +21,26 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    @ResponseBody
     public Product getProductById(@PathVariable Long id){
         return productService.getProductById(id);
     }
+
+    @GetMapping("/by/{manufacturer}")
+    public List<Product> getProductsByManufacturer(@PathVariable String manufacturer){
+        return productService.getProductsByManufacturer(manufacturer);
+    }
+
+    @GetMapping("/by/os/{os}")
+    public List<Product> findAllByDetailOs(@PathVariable String os){
+        return productService.findAllByDetailOs(os);
+    }
+    @GetMapping("/by/filter/{os}/{min, max}")
+    public List<Product> findAllByDetailOsAndPriceBetween(@PathVariable String os, @PathVariable double min, @PathVariable double max){
+        return productService.findAllByDetailOs(os);
+    }
+
+
+
 
 
 }

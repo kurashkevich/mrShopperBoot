@@ -7,8 +7,10 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.Date;
+
 
 @Data
 @AllArgsConstructor
@@ -46,5 +48,11 @@ public class Product implements Serializable {
                 ", manufacturer='" + manufacturer + '\'' +
                 ", developedDate=" + developedDate +
                 '}';
+    }
+
+    public Product(Integer count, Double price, String manufacturer) {
+        this.count = count;
+        this.price = price;
+        this.manufacturer = manufacturer;
     }
 }

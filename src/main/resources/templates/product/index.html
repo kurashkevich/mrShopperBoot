@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+    <h1>Добавить товар</h1>
+    <a href="/nonRestProducts/crete">добавить</a>
+    <h2>hi from products</h2>
+    <div>
+        <table cellspacing="2" border="1" cellpadding="5">
+            <tr>
+                <th>id</th>
+                <th>производитель</th>
+                <th>модель</th>
+                <th>рам</th>
+                <th>ром</th>
+                <th>размер экрана</th>
+                <th>цена</th>
+                <th>Количество на складе</th>
+            </tr>
+            <th:block th:each="product : ${products}">
+                <tr>
+                    <td th:text="${product.idProduct}"></td>
+                    <td th:text="${product.manufacturer}">...</td>
+                    <td th:text="${product.detail.model}">...</td>
+                    <td th:text="${product.detail.rom}">...</td>
+                    <td th:text="${product.detail.ram}">...</td>
+                    <td th:text="${product.detail.screenSize}">...</td>
+                    <td th:text="${product.price}">...</td>
+                    <td th:text="${product.count}">...</td>
+                    <td><a th:href="'/nonRestDetail?id=' + ${product.detail.idDetail}">подробнее</a></td>
+                    <td><a th:href="'/nonRestProducts/delete?id=' + ${product.idProduct}">удалить</a> </td>
+                </tr>
+            </th:block>
+        </table>
+    </div>
+    <a href="/admin">to admin</a>
+</body>
+</html>

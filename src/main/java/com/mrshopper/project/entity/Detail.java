@@ -7,9 +7,11 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Data
 @AllArgsConstructor
@@ -42,5 +44,14 @@ public class Detail implements Serializable {
                 ", description='" + description + '\'' +
                 ", products.json=" + products.size() +
                 '}';
+    }
+
+    public Detail(String model, String os, String rom, String ram, String screenSize, String description) {
+        this.model = model;
+        this.os = os;
+        this.rom = rom;
+        this.ram = ram;
+        this.screenSize = screenSize;
+        this.description = description;
     }
 }
