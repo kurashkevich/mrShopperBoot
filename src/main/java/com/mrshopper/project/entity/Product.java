@@ -47,4 +47,10 @@ public class Product implements Serializable {
                 ", developedDate=" + developedDate +
                 '}';
     }
+
+    public Product(Integer count, Double price, String manufacturer) {
+        this.count = count;
+        this.price = price;
+        this.manufacturer = manufacturer;
+    }
 }
