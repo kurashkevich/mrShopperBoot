@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/nonRestProducts")
-public class TestProductController {
+public class NonRestProductController {
     @Autowired
     ProductService productService;
 
     @GetMapping
     public String getProducts(Model model){
         model.addAttribute("products", productService.getProducts());
+        model.addAttribute("asd", "/goole");
         return "product/index";
     }
 }

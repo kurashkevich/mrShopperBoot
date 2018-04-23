@@ -11,18 +11,23 @@
             <th:block th:each="product : ${products}">
                 <tr>
                     <th>id</th>
-                    <th>Количество на складе</th>
-                    <th>цена</th>
                     <th>производитель</th>
+                    <th>цена</th>
+                    <th>Количество на складе</th>
+                    <th>деталька</th>
                 </tr>
                 <tr>
-                    <td th:text="${product.idProduct}">...</td>
+                    <td th:text="${product.idProduct}"></td>
                     <td th:text="${product.manufacturer}">...</td>
                     <td th:text="${product.price}">...</td>
                     <td th:text="${product.count}">...</td>
+                    <td th:text="${product.detail.idDetail}">...</td>
+                    <td><a th:href="'/nonRestDetail?id=' + ${product.detail.idDetail}">подробнее</a></td>
+
                 </tr>
             </th:block>
         </table>
     </div>
+  <!--  "@{'/order/details'(id=${order.id})}"-->
 </body>
 </html>
