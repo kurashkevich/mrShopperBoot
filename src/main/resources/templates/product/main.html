@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Добавить товар</h1>
-    <a href="/nonRestProducts/crete">добавить</a>
+    <a href="/products/create">добавить</a>
     <h2>hi from products</h2>
     <div>
         <table cellspacing="2" border="1" cellpadding="5" id="productTable">
@@ -34,12 +34,11 @@
                     <td th:text="${product.price}">...</td>
                     <td th:text="${product.count}">...</td>
                     <td><a th:href="'/nonRestDetail?id=' + ${product.detail.idDetail}">подробнее</a></td>
-                    <td><a th:href="'/nonRestProducts/delete?id=' + ${product.idProduct}">удалить</a> </td>
+                    <td><a th:href="'/products/delete?id=' + ${product.idProduct}">удалить</a> </td>
                 </tr>
             </th:block>
         </table>
     </div>
-    <a href="/admin">to admin</a>
-    <a href="/nonRestProducts">to products</a>
+    <a href="/products">to products</a>
 </body>
 </html>
