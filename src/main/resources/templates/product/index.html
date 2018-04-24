@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Products</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/assets/js/util.js"></script>
 </head>
 <body>
     <h1>Добавить товар</h1>
     <a href="/nonRestProducts/crete">добавить</a>
     <h2>hi from products</h2>
     <div>
-        <table cellspacing="2" border="1" cellpadding="5">
+        <table cellspacing="2" border="1" cellpadding="5" id="productTable">
             <tr>
                 <th>id</th>
                 <th>производитель</th>
@@ -20,6 +22,7 @@
                 <th>цена</th>
                 <th>Количество на складе</th>
             </tr>
+            <input type="button" id="refreshProducts" th:value="Refresh">
             <th:block th:each="product : ${products}">
                 <tr>
                     <td th:text="${product.idProduct}"></td>
@@ -37,5 +40,6 @@
         </table>
     </div>
     <a href="/admin">to admin</a>
+    <a href="/nonRestProducts">to products</a>
 </body>
 </html>

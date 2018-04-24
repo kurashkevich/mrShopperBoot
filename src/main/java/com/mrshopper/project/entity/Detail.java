@@ -19,7 +19,7 @@ import java.util.List;
 @Entity
 public class Detail implements Serializable {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDetail;
     private String model; //iphone 8
     private String os; //ios
