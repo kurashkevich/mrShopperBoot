@@ -1,0 +1,212 @@
+// out: ../css/main.css, compress: true  
+html {
+    font-size: 14px;
+    line-height: 1.4;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: #00334c;
+}
+
+body {
+    background-color: #e3e3e3;
+}
+
+a {
+    transition-duration: 0.3s;
+    cursor: pointer;
+    color: inherit;
+    text-decoration: inherit;
+    text-transform: inherit;
+    &:hover {
+        filter: brightness(1.1);
+    }
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+//MIX's
+.block_white {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.gradient_blue {
+    color: #ffffff;
+    background: #0069ba;
+    background: -moz-linear-gradient(-45deg, #0069ba 1%, #005ca3 100%);
+    background: -webkit-linear-gradient(-45deg, #0069ba 1%, #005ca3 100%);
+    background: linear-gradient(135deg, #0069ba 1%, #005ca3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0069ba', endColorstr='#005ca3', GradientType=1);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+//MIX's end
+.btn {
+    .gradient_blue;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px;
+    min-width: 100px;
+    text-align: center;
+}
+
+.btns-wrapper {
+    text-align: right;
+    margin: 0 -10px;
+}
+
+.form {
+    &__input {
+        border: 2px solid transparent;
+        outline: none;
+    }
+    &__select {
+        max-height: 100px;
+        width: 100%;
+    }
+    &__input,
+    &__select {
+        transition-duration: 0.3s;
+        font-size: 16px;
+        padding: 5px;
+        margin: 10px 0 20px;
+        outline: none;
+        border: 1px solid #0063b1;
+        border-radius: 4px;
+    }
+    &_search {
+        &__input {
+            box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(0, 0, 0, 0.4);
+            width: 240px;
+            line-height: 1rem;
+            border-radius: 1.5rem;
+            padding: 5px 15px;
+            &:focus {
+                border-color: deepskyblue;
+            }
+        }
+    }
+    &_filters {
+        &__input {
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+    }
+}
+
+.language {
+    padding: 10px 0;
+    &__item {
+        text-transform: uppercase;
+        &:not(:last-of-type):after {
+            content: "|";
+            padding: 0 10px;
+        }
+        &_active {
+            text-decoration: underline;
+        }
+    }
+}
+
+.nav {
+    padding: 0 10px 10px 10px;
+    &__item {
+        .block_white;
+        font-size: 16px;
+        display: inline-block;
+        color: #0063b1;
+        margin-right: 10px;
+        padding: 10px 20px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+}
+
+.user-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #00334c;
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0 10px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+    li {
+        display: inline-block;
+        &:not(:last-of-type):after {
+            content: "|";
+        }
+    }
+    &__item {
+        display: inline-block;
+        padding: 10px 20px;
+    }
+}
+
+.form_filters {
+    .block_white;
+    margin: 10px;
+    padding: 15px;
+}
+
+.products {
+    margin: 10px;
+    &__item {
+        padding: 20px 10px 10px 10px;
+        &:not(:last-of-type) {
+            margin-bottom: 20px;
+        }
+        .block_white;
+    }
+}
+
+.product-card {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    img {
+        float: left;
+        padding-right: 20px;
+    }
+    &__header {
+        font-size: 20px;
+        color: #0063b1;
+        padding-bottom: 10px;
+        margin: 0;
+    }
+}
+
+.header,
+.footer {
+    .gradient_blue;
+    .container {
+        padding: 20px 10px;
+    }
+}
+
+.footer {
+    text-align: center;
+}
+
+@media all and (min-width: 769px) {
+    .user-menu {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+    .products {
+        padding-right: 20px;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .user-menu {
+        text-align: right;
+    }
+    .form_filters {
+        margin-bottom: 20px;
+    }
+}

@@ -25,7 +25,7 @@ public class ProductController {
     @GetMapping
     public String getProducts(Model model){
         model.addAttribute("products", productService.getProducts());
-        return "product/main";
+        return "product/mainPage";
     }
 
     @Transactional

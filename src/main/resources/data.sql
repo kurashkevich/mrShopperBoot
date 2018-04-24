@@ -1,10 +1,10 @@
 /*ID, DESCR, name, unit, */
-insert into DETAIL values (1, 'very good iphone', 'iphone 8', 'ios', '8gb', '32gb', '5.5');
-insert into DETAIL values (2, 'very good android', 'galaxy s8', 'android', '16gb', '64gb', '6"');
-insert into DETAIL values (3, 'very good android', 'mi6', 'android', '16gb', '128gb', '4.5');
-insert into DETAIL values (4, 'very good android', 'p8', 'android', '4gb', '32gb', '5.3');
-insert into DETAIL values (5, 'very good iphone', 'iphone 5s', 'ios', '8gb', '16gb', '5');
-insert into DETAIL values (6, 'very good iphone', null, 'ios', '8gb', '16gb', '5');
+insert into DETAIL values (1, 'very good iphone', 'iphone 8', 'ios', '8', '32', '5.5');
+insert into DETAIL values (2, 'very good android', 'galaxy s8', 'android', '16', '64', '6"');
+insert into DETAIL values (3, 'very good android', 'mi6', 'android', '16', '128', '4.5');
+insert into DETAIL values (4, 'very good android', 'p8', 'android', '4', '32', '5.3');
+insert into DETAIL values (5, 'very good iphone', 'iphone 5s', 'ios', '8', '16', '5');
+insert into DETAIL values (6, 'very good iphone', null, 'ios', '8', '16', '5');
 
 
 

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mr. Shopper</title>
+    <link rel="stylesheet" href="/assets/common/css/grid.css">
+    <link rel="stylesheet" href="/assets/common/css/main.css">
+    <link rel="stylesheet" href="/assets/common/css/fonts.css">
+</head>
+
+<body>
+<header class="header">
+    <div class="container flex">
+        <a href="http://localhost:8080" class="logo">
+            <img src="/assets/common/imgs/logo-mr-shopper.svg" alt="mr. Shopper">
+        </a>
+        <div>
+            <div class="language">
+                <a href="#" class="language__item" id="en">EN</a><a href="#" class="language__item language__item_active" id="ru">RU</a>
+            </div>
+            <form action="#" class="form form_search">
+                <input class="form__input form_search__input" type="search" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+</header>
+
+<div class="container flex flex_top">
+    <nav class="nav">
+        <a href="#" class="nav__item">Каталог</a>
+        <a href="#" class="nav__item">Наши контакты</a>
+    </nav>
+    <ul class="user-menu">
+        <li><a class="user-menu__item" href="#">Моя корзина</a></li>
+        <li><a class="user-menu__item" href="#">Выйти</a></li>
+    </ul>
+</div>
+<main class="container content content_catalog">
+    <form class="form form_filters" id="filters">
+        <label class="form_filters__item">
+            <div>Производитель</div>
+            <select class="form__select" name="#" id="manufacturer">
+                <option value="0" selected>Не важно</option>
+                <option value="apple">Apple</option>
+                <option value="sumsung">Sumsung</option>
+            </select>
+        </label>
+        <label class="form_filters__item">
+            <div>Операционная система</div>
+            <select class="form__select" name="#" id="os">
+                <option value="0" selected>Не важно</option>
+                <option value="ios">IOS</option>
+                <option value="android">Android</option>
+            </select>
+        </label>
+        <label class="form_filters__item">
+            <div>Диагональ, "</div>
+            от <input class="form__input form_filters__input" type="number" min="3" max="7" step="0.1" id="minDiagonal">
+            до <input class="form__input form_filters__input" type="number" min="3" max="7" step="0.1" id="maxDiagonal">
+        </label>
+        <label class="form_filters__item">
+            <div>Оперативная память, Гб</div>
+            от <input class="form__input form_filters__input" type="number" min="0" max="6" step="0.1" id="minRam">
+            до <input class="form__input form_filters__input" type="number" min="0" max="6" step="0.1" id="maxRam">
+        </label>
+        <label class="form_filters__item">
+            <div>Рарешение камеры, Мп</div>
+            от <input class="form__input form_filters__input" type="number" min="0" max="50" step="1" id="minResol">
+            до <input class="form__input form_filters__input" type="number" min="0" max="50" step="1" id="maxResol">
+        </label>
+        <label class="form_filters__item">
+            <div>Наличие карты памяти</div>
+            Есть <input class="form__input form_filters__input" name="memoryCard" type="radio" id="hasMemoryCard">
+            Нет  <input class="form__input form_filters__input" name="memoryCard" type="radio" id="noMemoryCard">
+            Не важно <input class="form__input form_filters__input" name="memoryCard" type="radio" id="hasNoMemoryCard">
+        </label>
+        <label class="form_filters__item">
+            <div>Цвет телефона</div>
+            <select class="form__select" name="#" id="phoneColor" multiple>
+                <option value="0" selected>Не важно</option>
+                <option value="black">Черный</option>
+                <option value="white">Белый</option>
+                <option value="gray">Серый</option>
+            </select>
+        </label>
+        <label class="form_filters__item">
+            <div>Кол-во SIM карт</div>
+            1 SIM <input class="form__input form_filters__input" name="memoryCard" type="checkbox" id="simValue1">
+            2 SIM <input class="form__input form_filters__input" name="memoryCard" type="checkbox" id="simValue2">
+            3 SIM <input class="form__input form_filters__input" name="memoryCard" type="checkbox" id="simValue3">
+        </label>
+        <div class="btns-wrapper">
+            <a href="#" class="btn btn_filters-apply">Применить</a>
+        </div>
+
+    </form>
+
+
+    <section class="products">
+        <th:block th:each="product : ${products}">
+            <article class="products__item product-card">
+                <img src="/assets/content/img/products-imgs/001/sdfs.jpg" alt="dg">
+                <h1 class="product-card__header" th:text="${product.manufacturer} + ' ' + ${product.detail.model}">Huawei P20 Lite ANE-LX1</h1>
+                <div class="description" th:text="${product.detail.os} + ', ' + 'экран' +
+                ' ' + ${product.detail.screenSize} + ' ' + 'дюймов' +
+                ', ' + 'ОЗУ' + ' ' +${product.detail.ram} + 'ГБ' +
+                ', ' + 'флеш-память' + ' ' + ${product.detail.rom} + 'ГБ'">
+
+                    Android, экран 5.84" IPS (1080x2280), HiSilicon Kirin 659, ОЗУ 4 ГБ, флэш-память 64 ГБ, карты памяти, камера 16 Мп, аккумулятор 3000 мАч, 2 SIM, цвет черный
+                </div>
+                <div class="btns-wrapper">
+                    <a href="#" class="btn btn_more">Подробнее</a>
+                    <a href="#" class="btn btn_add-to-cart">В корзину</a>
+                </div>
+            </article>
+        </th:block>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        © All rights reserved, 2018
+    </div>
+</footer>
+
+
+
+
+
+
+
+<script src="/assets/common/js/design.js"></script>
+</body>
+
+</html>
