@@ -33,7 +33,7 @@
                     <td th:text="${product.detail.screenSize}">...</td>
                     <td th:text="${product.price}">...</td>
                     <td th:text="${product.count}">...</td>
-                    <td><a th:href="'/nonRestDetail?id=' + ${product.detail.idDetail}">подробнее</a></td>
+                    <td><a th:href="'/details?id=' + ${product.detail.idDetail}">подробнее</a></td>
                     <td><a th:href="'/products/delete?id=' + ${product.idProduct}">удалить</a> </td>
                 </tr>
             </th:block>

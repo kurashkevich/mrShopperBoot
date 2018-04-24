@@ -16,7 +16,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/greeting")
+   /* @GetMapping("/greeting")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
         return "greeting";
@@ -31,7 +31,7 @@ public class UserController {
         System.out.println(n.getIdUser());
         userService.save(n);
         return "greeting";
-    }
+    }*/
 
 
     /*@GetMapping("/users")
