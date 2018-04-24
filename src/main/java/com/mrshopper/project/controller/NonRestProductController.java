@@ -24,8 +24,9 @@ public class NonRestProductController {
 
     @GetMapping
     public String getProducts(Model model){
+        System.out.println("non rest product");
         model.addAttribute("products", productService.getProducts());
-        return "product/index";
+        return "product/main";
     }
 
     @Transactional
@@ -33,7 +34,7 @@ public class NonRestProductController {
     public String delProduct(@RequestParam Long id){
         System.out.println(id);
         productService.deleteProduct(id);
-        return "product/index";
+        return "product/main";
     }
 
     @GetMapping("/crete")
@@ -62,6 +63,6 @@ public class NonRestProductController {
         product.setCount(count);
         product.setDetail(detail);
         productService.save(product);
-        return "product/index";
+        return "product/main";
     }
 }

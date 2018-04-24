@@ -1,6 +1,5 @@
 package com.mrshopper.project.controller;
 
-import com.mrshopper.project.entity.Detail;
 import com.mrshopper.project.service.DetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,8 +16,7 @@ public class NonRestDetailController {
 
     @GetMapping
     public String getDetailById(@RequestParam Long id,  Model model){
-        System.out.println(id);
         model.addAttribute("detailById", detailService.getProductById(id));
-        return "detail/index";
+        return "detail/main";
     }
 }

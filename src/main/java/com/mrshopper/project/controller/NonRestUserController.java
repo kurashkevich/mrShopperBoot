@@ -15,6 +15,6 @@ public class NonRestUserController {
 
     @GetMapping
     public String addUser(){
-        return "user/index";
+        return "user/main";
     }
 }
