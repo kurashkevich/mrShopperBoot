@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="/assets/common/css/grid.css">
     <link rel="stylesheet" href="/assets/common/css/main.css">
     <link rel="stylesheet" href="/assets/common/css/fonts.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        function test() {
+            var manufacturer = $( "#manufacturer option:selected" ).text();
+            alert(manufacturer);
+            return manufacturer;
+        }
+    </script>
 </head>
 
 <body>
@@ -91,16 +99,15 @@
             2 SIM <input class="form__input form_filters__input" name="memoryCard" type="checkbox" id="simValue2">
             3 SIM <input class="form__input form_filters__input" name="memoryCard" type="checkbox" id="simValue3">
         </label>
-        <div class="btns-wrapper">
-            <a href="#" class="btn btn_filters-apply">Применить</a>
+        <div class="btns-wrapper" >
+            <a href="#" class="btn btn_filters-apply" id="searchByFilter" onclick="test()">Применить</a>
         </div>
 
     </form>
 
-
-    <section class="products">
+    <section class="products" >
         <th:block th:each="product : ${products}">
-            <article class="products__item product-card">
+            <article id="productsTable" class="products__item product-card">
                 <img src="/assets/content/img/products-imgs/001/sdfs.jpg" alt="dg">
                 <h1 class="product-card__header" th:text="${product.manufacturer} + ' ' + ${product.detail.model}">Huawei P20 Lite ANE-LX1</h1>
                 <div class="description" th:text="${product.detail.os} + ', ' + 'экран' +
@@ -131,6 +138,7 @@
 
 
 <script src="/assets/common/js/design.js"></script>
+<script src="/assets/js/util.js"></script>
 </body>
 
 </html>

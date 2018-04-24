@@ -1,47 +1,26 @@
-/*
-$(document).ready(function(){
-    $('#addPerson').click(function () {
-        addPerson();
+$(document).ready(function() {
+    $('#searchByFilter').click(function () {
+        searchByFilterBtn();
     });
-    $('#deletePerson').click(function () {
-        deletePerson();
-    });
-    $('#productAdd').click(function () {
-        addProduct();
-    });
-    $('#productUpdate').click(function () {
-        updateProduct();
-    });
-    $('#productDelete').click(function () {
-        deleteProduct();
+    $('#manufacturer').click(function () {
+        var manufacturer = $( "#manufacturer option:selected" ).text();
+        //alert(manufacturer);
+        changeLink(manufacturer);
     });
 
-    $("#refreshProducts").click()(function() {
-        refreshProducts();
-    })
 });
-​
-function refreshProducts() {
 
+function changeLink(man) {
+
+    //var manufacturer = $( "#manufacturer option:selected" ).text();
+    var url = '/products/filter?manufacturer='+man;
+    //alert(url);
     $.ajax({
-        dataType: "json",
+        headers:"Accept: application/json",
         type:'get',
-        url: "/products"
-    }).done(function(data) {
-        $.each(data, function (index, value) {
-            var el = '<tr> <td th:text="'+value.idProduct}+'"></td>'
-            '<tr> <td th:text="'+value.manufacturer}+'"></td>'
-            '<tr> <td th:text="'+value.detail.model}+'"></td>'
-            '<tr> <td th:text="'+value.detail.rom}+'"></td>'
-            '<tr> <td th:text="'+value.detail.ram}+'"></td>'
-
-            '<tr> <td th:text="'+value.detail.screenSize+'"></td>'
-            '<tr> <td th:text="'+value.price}+'"></td>'
-            '<tr> <td th:text="'+value.count}+'"></td>';
-
-            $(".productTable").append(el);
-        });
-
+        url: url
+    }).done(function() {
+        $("#searchByFilter").attr("href", url);
     }).fail(function(data){
         if ( console && console.log ) {
             console.log( "Error data:", data);
@@ -49,63 +28,6 @@ function refreshProducts() {
     });
 }
 
-function addPerson() {
-    $('#personForm').prop('action', 'add.form');
-    $('#personButton').prop('value', 'Add person');
-    $('#personForm').show();
+function searchByFilterBtn() {
+
 }
-​
-function deletePerson() {
-    $('#personForm').prop('action', 'delete.form');
-    $('#personButton').prop('value', 'Delete person');
-    $('#personForm').show();
-}
-​
-function addProduct() {
-    $('#personForm').prop('action', 'addProduct.form');
-    var name = $("#name").val();
-    var model = $("#model").val();
-    var price = $("#price").val();
-​
-  var token = $("meta[name='_csrf']").attr("content");
-    var header = $("meta[name='_csrf_header']").attr("content");
-    if (name && model && price) {
-        var product = {
-            name: name,
-            model: model,
-            price: price
-        };
-        $.ajax({
-            data:product,
-            dataType: "json",
-            type:'post',
-            beforeSend: function(xhr){xhr.setRequestHeader(header, token);},
-            url: restUrl
-        }).done(function(data) {
-            var el = '<div id="' + data.id + '">'+ data.name +'  '+data.model+'  '+data.price+'</div>';
-            $(".productTable").append(el);
-        }).fail(function(data){
-            if ( console && console.log ) {
-                console.log( "Error data:", data);
-            }
-        });
-    }
-}
-​
-function deleteProduct() {
-    var id = $("#id").val();
-    var url = restUrl+ "/" + id;
-​
-  $.ajax({
-      headers:"Accept: application/json",
-      type:'delete',
-      url: url
-  }).done(function(data) {
-      $("#"+id).remove();
-  }).fail(function(data){
-      if ( console && console.log ) {
-          console.log( "Error data:", data);
-      }
-  });
-}
-*/

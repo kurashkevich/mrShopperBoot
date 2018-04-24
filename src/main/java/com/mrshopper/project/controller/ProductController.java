@@ -28,6 +28,12 @@ public class ProductController {
         return "product/mainPage";
     }
 
+    @GetMapping("/filter")
+    public String getProductsByFilter(@RequestParam String manufacturer, Model model){
+        model.addAttribute("products", productService.getProductsByManufacturer(manufacturer));
+        return "product/mainPage";
+    }
+
     @Transactional
     @GetMapping("/delete")
     public String delProduct(@RequestParam Long id){
