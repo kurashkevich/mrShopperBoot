@@ -42,7 +42,6 @@ public class Detail implements Serializable {
                 ", ram='" + ram + '\'' +
                 ", screenSize='" + screenSize + '\'' +
                 ", description='" + description + '\'' +
-                ", products.json=" + products.size() +
                 '}';
     }
 
