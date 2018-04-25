@@ -18,6 +18,10 @@ public class TestRestController {
 
     @GetMapping
     List<Product> getRestSearchByFilter(@RequestParam String manufacturer,@RequestParam String osName, @RequestParam String minD, @RequestParam String maxD){
+        System.out.println(productService.getProductsByFilter(manufacturer, osName, minD, maxD).size());
+
         return productService.getProductsByFilter(manufacturer, osName, minD, maxD);
     }
+
+
 }

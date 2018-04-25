@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#searchByFilter').click(function () {
-        searchByFilterBtn();
-        //restSearchByFilterBtn();
+        //searchByFilterBtn();
+        restSearchByFilterBtn();
     });
     $('#maxDiagonal').click(function () {
 
@@ -51,7 +51,7 @@ function searchByFilterBtn() {
 
 
 function restFilterLink(manufacturer, os, minDiagonal, maxDiagonal){
-    var url = '/productsRest?manufacturer='+manufacturer+'&osName='+os+'&minD='+minDiagonal+'&maxD='+maxDiagonal;
+    var url = 'http://localhost:8080/productsRest?manufacturer='+manufacturer+'&osName='+os+'&minD='+minDiagonal+'&maxD='+maxDiagonal;
     return url;
     //http://localhost:8080/productsRest?manufacturer=Samsung&osName=IOS&minD=3&maxD=7
 }
@@ -66,19 +66,24 @@ function restSearchByFilterBtn() {
     var product = {
         manufacturer: manufacturer,
         os: os,
+        minDiagonal: minDiagonal,
+        maxDiagonal: maxDiagonal
     };
 
-    var restUrl = filterLink(manufacturer, os, minDiagonal, maxDiagonal);
-    alert(restUrl);
+    var restUrl = restFilterLink(manufacturer, os, minDiagonal, maxDiagonal);
     $.ajax({
         headers:"Accept: application/json",
         type:'get',
         dataType: "json",
         url: restUrl
     }).done(function(data) {
-        var el = ' <div id="2"> ' + data.manufacturer + '</div>  ';
-        $(".test").append(el);
+        alert('done' + data.size);
+        $("#searchByFilter").attr("href", restUrl);
     })
+    $("#searchByFilter").attr("href", restUrl);
+
+    var el = ' <p>Test  </p>  ';
+    $(".test").append(el);
 
 
 }
