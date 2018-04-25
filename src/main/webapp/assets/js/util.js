@@ -4,17 +4,13 @@ $(document).ready(function() {
     });
     $('#manufacturer').click(function () {
         var manufacturer = $( "#manufacturer option:selected" ).text();
-        //alert(manufacturer);
         changeLink(manufacturer);
     });
 
 });
 
 function changeLink(man) {
-
-    //var manufacturer = $( "#manufacturer option:selected" ).text();
     var url = '/products/filter?manufacturer='+man;
-    //alert(url);
     $.ajax({
         headers:"Accept: application/json",
         type:'get',
@@ -29,5 +25,26 @@ function changeLink(man) {
 }
 
 function searchByFilterBtn() {
+    var manufacturer = $( "#manufacturer option:selected" ).text();
+    var os = $( "#os option:selected" ).text();
+    var minDiagonal =$('#minDiagonal').val();
+    var maxDiagonal =$('#maxDiagonal').val();
+    var minRam =$('#minRam').val();
+    var maxRam =$('#maxRam').val();
 
+  /*  alert(manufacturer);
+    alert(os);
+    alert(minDiagonal);
+    alert(maxDiagonal);
+    alert(minRam);
+    alert(maxRam);*/
+
+    var url = '/products/filterBoth?manufacturer='+man;
+    $.ajax({
+        headers:"Accept: application/json",
+        type:'get',
+        url: url
+    }).done(function() {
+        $("#searchByFilter").attr("href", url);
+    })
 }

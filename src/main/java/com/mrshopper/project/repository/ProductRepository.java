@@ -11,7 +11,5 @@ import java.util.List;
 @RepositoryRestResource
 public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> getProductsByManufacturer(String manufacturer);
-    List<Product> findAllByDetailOs(String os);
-    List<Product> findAllByDetailOsAndPriceBetween(String os, double a, double b);
     Long deleteByIdProduct(Long idProduct);
 }

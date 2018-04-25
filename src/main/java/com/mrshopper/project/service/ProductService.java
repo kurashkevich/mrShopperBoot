@@ -26,13 +26,6 @@ public class ProductService {
          return productRepository.getProductsByManufacturer(manufacturer);
     }
 
-    public List<Product> findAllByDetailOs(String os){
-        return productRepository.findAllByDetailOs(os);
-    }
-
-    public List<Product> findAllByDetailOsAndPriceBetween(String os, double a, double b){
-        return productRepository.findAllByDetailOsAndPriceBetween(os, a, b);
-    }
 
     public Product save(Product product){
         return productRepository.save(product);
