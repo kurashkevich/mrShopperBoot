@@ -5,7 +5,7 @@ insert into DETAIL values (3, 'very good android', 'mi6', 'android', '16', '128'
 insert into DETAIL values (4, 'very good android', 'p8', 'android', '4', '32', '5.3');
 insert into DETAIL values (5, 'very good iphone', 'iphone 5s', 'ios', '8', '16', '5');
 insert into DETAIL values (6, 'very good iphone', null, 'ios', '8', '16', '5');
-insert into DETAIL values (7, 'very good iphone', null, 'ios', '8', '16', '5');
+insert into DETAIL values (7, 'very good iphone', null, 'IOS', '8', '16', '5');
 
 
 /*

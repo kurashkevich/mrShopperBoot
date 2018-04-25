@@ -2,9 +2,9 @@ $(document).ready(function() {
     $('#searchByFilter').click(function () {
         searchByFilterBtn();
     });
-    $('#manufacturer').click(function () {
-        var manufacturer = $( "#manufacturer option:selected" ).text();
-        changeLink(manufacturer);
+    $('#maxDiagonal').click(function () {
+       // var manufacturer = $( "#manufacturer option:selected" ).text();
+       // changeLink(manufacturer);
     });
 
 });
@@ -24,6 +24,11 @@ function changeLink(man) {
     });
 }
 
+function filterLink(manufacturer, os, minDiagonal, maxDiagonal){
+    var url = '/products/byFilter?manufacturer='+manufacturer+'&osName='+os+'&minD='+minDiagonal+'&maxD='+maxDiagonal;
+    return url;
+}
+
 function searchByFilterBtn() {
     var manufacturer = $( "#manufacturer option:selected" ).text();
     var os = $( "#os option:selected" ).text();
@@ -32,19 +37,16 @@ function searchByFilterBtn() {
     var minRam =$('#minRam').val();
     var maxRam =$('#maxRam').val();
 
-  /*  alert(manufacturer);
-    alert(os);
-    alert(minDiagonal);
-    alert(maxDiagonal);
-    alert(minRam);
-    alert(maxRam);*/
-
-    var url = '/products/filterBoth?manufacturer='+man;
+    var url = filterLink(manufacturer, os, minDiagonal, maxDiagonal);
+    alert(url);
     $.ajax({
         headers:"Accept: application/json",
         type:'get',
         url: url
     }).done(function() {
+        alert('done');
         $("#searchByFilter").attr("href", url);
     })
+    $("#searchByFilter").attr("href", url);
+
 }
