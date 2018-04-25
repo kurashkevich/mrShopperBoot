@@ -35,4 +35,8 @@ public class ProductService {
         return productRepository.deleteByIdProduct(idProduct);
     }
 
+    public List<Product> getProductsByOsName(String manufacturer, String osName){
+        return productRepository.getProductsByOsName(manufacturer, osName);
+    }
+
 }

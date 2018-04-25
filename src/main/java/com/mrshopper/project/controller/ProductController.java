@@ -34,6 +34,13 @@ public class ProductController {
         return "product/mainPage";
     }
 
+
+    @GetMapping("/byOsName")
+    public String getProductsByOsName(@RequestParam String manufacturer,@RequestParam String osName, Model model){
+        model.addAttribute("products", productService.getProductsByOsName(manufacturer, osName));
+        return "product/mainPage";
+    }
+
     @Transactional
     @GetMapping("/delete")
     public String delProduct(@RequestParam Long id){
