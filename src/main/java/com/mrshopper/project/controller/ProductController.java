@@ -41,7 +41,7 @@ public class ProductController {
         return "product/mainPage";
     }
     @GetMapping("/byOsName")
-    public String getProductsByOsName(@RequestParam String manufacturer,@RequestParam String osName, Model model){
+    public String getProductsByOsName(@RequestParam String manufacturer, @RequestParam String osName, Model model){
         model.addAttribute("products", productService.getProductsByOsName(manufacturer, osName));
         return "product/mainPage";
     }

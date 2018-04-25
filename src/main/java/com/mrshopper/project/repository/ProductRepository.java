@@ -13,12 +13,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> getProductsByManufacturer(String manufacturer);
     Long deleteByIdProduct(Long idProduct);
 
-   /* @Query("select p from Product p inner join p.detail d where d.idDetail = :idDetail" +
-            " ")
-    List<Product> getProductsByManufacturerAndOs;*/
-
     @Query("select p from Product p join p.detail d" +
-            " where p.manufacturer = :manufacturer and d.os = :os")
+            " where upper(p.manufacturer)  = upper(:manufacturer)  and upper(d.os)  = upper(:os) ")
     List<Product>  getProductsByOsName(@Param("manufacturer") String manufacturer,@Param("os") String osName);
 
     @Query("select p from Product p join p.detail d" +

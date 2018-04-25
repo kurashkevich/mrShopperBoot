@@ -9,23 +9,16 @@ $(document).ready(function() {
 
 });
 
-function changeLink(man) {
-    var url = '/products/filter?manufacturer='+man;
-    $.ajax({
-        headers:"Accept: application/json",
-        type:'get',
-        url: url
-    }).done(function() {
-        $("#searchByFilter").attr("href", url);
-    }).fail(function(data){
-        if ( console && console.log ) {
-            console.log( "Error data:", data);
-        }
-    });
-}
 
 function filterLink(manufacturer, os, minDiagonal, maxDiagonal){
-    var url = '/products/byFilter?manufacturer='+manufacturer+'&osName='+os+'&minD='+minDiagonal+'&maxD='+maxDiagonal;
+    var url = '';
+    if(minDiagonal==='' && maxDiagonal === ''){
+        url = '/products/byOsName?manufacturer='+manufacturer+'&osName='+os;
+    }
+    else{
+        url = '/products/byFilter?manufacturer='+manufacturer+'&osName='+os+'&minD='+minDiagonal+'&maxD='+maxDiagonal;
+    }
+
     return url;
 }
 
@@ -34,19 +27,13 @@ function searchByFilterBtn() {
     var os = $( "#os option:selected" ).text();
     var minDiagonal =$('#minDiagonal').val();
     var maxDiagonal =$('#maxDiagonal').val();
+
     var minRam =$('#minRam').val();
     var maxRam =$('#maxRam').val();
 
     var url = filterLink(manufacturer, os, minDiagonal, maxDiagonal);
-    $.ajax({
-        headers:"Accept: application/json",
-        type:'get',
-        url: url
-    }).done(function() {
-        //alert('done');
-    })
     $("#searchByFilter").attr("href", url);
-    $("#manufacturer option:selected").attr("text", manufacturer);
+
 }
 
 
@@ -81,9 +68,9 @@ function restSearchByFilterBtn() {
         dataType: "json",
         url: 'http://localhost:8080/productsRest?manufacturer=Samsung&osName=IOS&minD=3&maxD=7'
     }).done(function(data) {
-        alert(data.manu);
-    })
+        s=data[0].idProduct;
 
+    })
 
     var el = ' <p>Test  </p>  ';
     $(".test").append(el);
@@ -95,3 +82,24 @@ function restSearchByFilterBtn() {
 <div class="test">
     <div id="1">привет1  привет2  привет3</div>
 </div>*/
+
+
+
+
+
+
+function changeLink(man) {
+    var url = '/products/filter?manufacturer='+man;
+    $.ajax({
+        headers:"Accept: application/json",
+        type:'get',
+        url: url
+    }).done(function(data) {
+        $("#searchByFilter").attr("href", url);
+    }).fail(function(data){
+        if ( console && console.log ) {
+            console.log( "Error data:", data);
+        }
+    });
+}
+
