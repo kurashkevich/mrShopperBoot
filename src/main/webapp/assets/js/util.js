@@ -75,12 +75,11 @@ function restSearchByFilterBtn() {
         headers:"Accept: application/json",
         type:'get',
         dataType: "json",
-        url: restUrl
+        url: 'http://localhost:8080/productsRest?manufacturer=Samsung&osName=IOS&minD=3&maxD=7'
     }).done(function(data) {
-        alert('done' + data.size);
-        $("#searchByFilter").attr("href", restUrl);
+        alert(data.manufacturer);
     })
-    $("#searchByFilter").attr("href", restUrl);
+
 
     var el = ' <p>Test  </p>  ';
     $(".test").append(el);
