@@ -62,12 +62,16 @@ function restSearchByFilterBtn() {
     var minDiagonal =$('#minDiagonal').val();
     var maxDiagonal =$('#maxDiagonal').val();
 
-
+    var idProduct='';
+    var count= '';
+    var price ='';
+    var manu='';
+    var date='';
     var product = {
-        manufacturer: manufacturer,
-        os: os,
-        minDiagonal: minDiagonal,
-        maxDiagonal: maxDiagonal
+        idProduct: idProduct,
+        count: count,
+        price: price,
+        manu: manu
     };
 
     var restUrl = restFilterLink(manufacturer, os, minDiagonal, maxDiagonal);
@@ -77,7 +81,7 @@ function restSearchByFilterBtn() {
         dataType: "json",
         url: 'http://localhost:8080/productsRest?manufacturer=Samsung&osName=IOS&minD=3&maxD=7'
     }).done(function(data) {
-        alert(data.manufacturer);
+        alert(data.manu);
     })
 
 
