@@ -105,25 +105,33 @@
 
     </form>
 
-    <section class="products" >
-        <th:block th:each="product : ${products}">
-            <article id="productsTable" class="products__item product-card">
-                <img src="/assets/content/img/products-imgs/001/sdfs.jpg" alt="dg">
-                <h1 class="product-card__header" th:text="${product.manufacturer} + ' ' + ${product.detail.model}">Huawei P20 Lite ANE-LX1</h1>
-                <div class="description" th:text="${product.detail.os} + ', ' + 'экран' +
-                ' ' + ${product.detail.screenSize} + ' ' + 'дюймов' +
-                ', ' + 'ОЗУ' + ' ' +${product.detail.ram} + 'ГБ' +
-                ', ' + 'флеш-память' + ' ' + ${product.detail.rom} + 'ГБ'">
+    <section class="products" id="productSession">
+        <div class = "productBlock">
+            <th:block th:each="product : ${products}">
+                <article id="productsTable" class="products__item product-card">
+                    <img src="/assets/content/img/products-imgs/001/sdfs.jpg" alt="dg">
+                    <h1 class="product-card__header" th:text="${product.manufacturer} + ' ' + ${product.detail.model}">Huawei P20 Lite ANE-LX1</h1>
+                    <div class="description" th:text="${product.detail.os} + ', ' + 'экран' +
+                    ' ' + ${product.detail.screenSize} + ' ' + 'дюймов' +
+                    ', ' + 'ОЗУ' + ' ' +${product.detail.ram} + 'ГБ' +
+                    ', ' + 'флеш-память' + ' ' + ${product.detail.rom} + 'ГБ'">
 
-                    Android, экран 5.84" IPS (1080x2280), HiSilicon Kirin 659, ОЗУ 4 ГБ, флэш-память 64 ГБ, карты памяти, камера 16 Мп, аккумулятор 3000 мАч, 2 SIM, цвет черный
-                </div>
-                <div class="btns-wrapper">
-                    <a href="#" class="btn btn_more">Подробнее</a>
-                    <a href="#" class="btn btn_add-to-cart">В корзину</a>
-                </div>
-            </article>
-        </th:block>
+                        Android, экран 5.84" IPS (1080x2280), HiSilicon Kirin 659, ОЗУ 4 ГБ, флэш-память 64 ГБ, карты памяти, камера 16 Мп, аккумулятор 3000 мАч, 2 SIM, цвет черный
+                    </div>
+                    <div class="btns-wrapper">
+                        <a href="#" class="btn btn_more">Подробнее</a>
+                        <a href="#" class="btn btn_add-to-cart">В корзину</a>
+                    </div>
+                </article>
+            </th:block>
+        </div>
     </section>
+
+    <div class="test">
+        <div id="1">привет1  привет2  привет3
+
+        </div>
+    </div>
 </main>
 <footer class="footer">
     <div class="container">
