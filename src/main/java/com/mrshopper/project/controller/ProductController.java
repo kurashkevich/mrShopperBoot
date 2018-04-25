@@ -34,7 +34,13 @@ public class ProductController {
         return "product/mainPage";
     }
 
-
+    @GetMapping("/byFilter")
+    public String getProductsByFilter(@RequestParam String manufacturer,@RequestParam String osName,
+                                      @RequestParam String minD, @RequestParam String maxD, Model model){
+        model.addAttribute("products", productService.getProductsByFilter(manufacturer, osName, minD, maxD));
+        System.out.println(minD + " " + manufacturer);
+        return "product/mainPage";
+    }
     @GetMapping("/byOsName")
     public String getProductsByOsName(@RequestParam String manufacturer,@RequestParam String osName, Model model){
         model.addAttribute("products", productService.getProductsByOsName(manufacturer, osName));

@@ -18,9 +18,12 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> getProductsByManufacturerAndOs;*/
 
     @Query("select p from Product p join p.detail d" +
-            " where p.manufacturer = :manufacturer and d.os = :os" +
-            "" +
-            "" +
-            "")
+            " where p.manufacturer = :manufacturer and d.os = :os")
     List<Product>  getProductsByOsName(@Param("manufacturer") String manufacturer,@Param("os") String osName);
+
+    @Query("select p from Product p join p.detail d" +
+            " where p.manufacturer = :manufacturer and d.os = :os " +
+            "and d.screenSize between :minDiagonal and :maxDiagonal")
+    List<Product>  getProductsByFilter(@Param("manufacturer") String manufacturer,@Param("os") String osName,
+                                       @Param("minDiagonal") String minD, @Param("maxDiagonal") String maxD);
 }

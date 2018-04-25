@@ -39,4 +39,8 @@ public class ProductService {
         return productRepository.getProductsByOsName(manufacturer, osName);
     }
 
+    public List<Product> getProductsByFilter(String manufacturer, String osName, String minD, String maxD){
+        return productRepository.getProductsByFilter(manufacturer, osName, minD, maxD);
+    }
+
 }
