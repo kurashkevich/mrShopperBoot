@@ -42,6 +42,10 @@
     </nav>
     <ul class="user-menu">
         <li><a class="user-menu__item" href="#">Моя корзина</a></li>
+        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
         <li><a class="user-menu__item" href="#">Выйти</a></li>
     </ul>
 </div>
