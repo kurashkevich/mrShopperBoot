@@ -6,15 +6,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserService userService;
 
-  /*  @GetMapping("/login")
+    @GetMapping("/registration")
     public String loginPage(){
         System.out.println("Привет");
-        return "user/login";
-    }*/
+        return "user/registration";
+    }
 
    /* @GetMapping("/greeting")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
