@@ -12,14 +12,20 @@ $(document).ready(function() {
     $('#ru').click(function () {
         i18n('ru');
     });
-    $('#moreBtn').click(function () {
-        getMoreInfo();
+    $('.btn_more').click(function (e) {
+       // e.preventDefault();
+        console.log(e.target);
+       // var id = document.getElement;
+        console.log(id);
+       // getMoreInfo(id);
     });
 
 });
 
-function getMoreInfo() {
-    var url = '/products/more';
+function getMoreInfo(id) {
+
+    var test = document.getElementById();
+    var url = '/products/more/' + id;
     window.location.replace(url);
 
 }

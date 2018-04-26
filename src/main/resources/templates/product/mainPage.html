@@ -20,7 +20,7 @@
 
 <body>
 <header class="header">
-    <h1 th:text="#{greeting}"></h1>
+    <!--<h1 th:text="#{greeting}"></h1>-->
     <div class="container flex">
         <a href="http://localhost:8080" class="logo">
             <img src="/assets/common/imgs/logo-mr-shopper.svg" alt="mr. Shopper">
@@ -43,12 +43,12 @@
         <a href="#" class="nav__item">Наши контакты</a>
     </nav>
     <ul class="user-menu">
-        <li><a class="user-menu__item" href="#">Моя корзина</a></li>
-        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-        <form th:action="@{/logout}" method="post">
+        <li><a class="user-menu__item" href="#" th:text="#{trash}">Моя корзина</a></li>
+     <!--   <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>-->
+        <!--<form th:action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
-        </form>
-        <li><a class="user-menu__item" href="#">Выйти</a></li>
+        </form>-->
+        <li><a class="user-menu__item" href="#" th:text="#{logout}">Выйти</a></li>
     </ul>
 </div>
 <main class="container content content_catalog">
@@ -125,7 +125,7 @@
                         Android, экран 5.84" IPS (1080x2280), HiSilicon Kirin 659, ОЗУ 4 ГБ, флэш-память 64 ГБ, карты памяти, камера 16 Мп, аккумулятор 3000 мАч, 2 SIM, цвет черный
                     </div>
                     <div class="btns-wrapper">
-                        <a href="#" class="btn btn_more" id="moreBtn">Подробнее</a>
+                        <a th:href="'/products/more/' + ${product.idProduct}"  class="btn btn_more">Подробнее</a>
                         <a href="#" class="btn btn_add-to-cart">В корзину</a>
                     </div>
                 </article>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -32,8 +32,8 @@
         <a href="#" class="nav__item">Наши контакты</a>
     </nav>
     <ul class="user-menu">
-        <li><a class="user-menu__item" href="#">Моя корзина</a></li>
-        <li><a class="user-menu__item" href="#">Выйти</a></li>
+        <li><a class="user-menu__item" href="#" th:text="#{trash}">Моя корзина</a></li>
+        <li><a class="user-menu__item" href="#" th:text="#{logout}">Выйти</a></li>
     </ul>
 </div>
 <main class="container content content_product">
@@ -43,24 +43,24 @@
             <table class="product-card__description">
                 <tr>
                     <th colspan="2"> <a href="#" class="btn btn_add-to-cart">В корзину</a>
-                        <h1 class="product-card__header">Huawei P20 Lite ANE-LX1</h1>
+                        <h1 class="product-card__header" th:text="${product.manufacturer} + ' ' + ${product.detail.model}">Huawei P20 Lite ANE-LX1</h1>
                     </th>
                 </tr>
                 <tr>
                     <th>Производитель:</th>
-                    <td>Apple</td>
+                    <td th:text="${product.manufacturer}">Apple</td>
                 </tr>
                 <tr>
                     <th>Операционная система</th>
-                    <td>IOS</td>
+                    <td th:text="${product.detail.os}">IOS</td>
                 </tr>
                 <tr>
                     <th>Диагональ экрана, "</th>
-                    <td>4,7</td>
+                    <td th:text="${product.detail.screenSize}">4,7</td>
                 </tr>
                 <tr>
                     <th>Оперативная память, Гб</th>
-                    <td>2</td>
+                    <td th:text="${product.detail.ram}">2</td>
                 </tr>
                 <tr>
                     <th>Разрешение камеры, МП</th>

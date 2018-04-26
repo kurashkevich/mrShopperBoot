@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8">
@@ -31,8 +31,8 @@
         <a href="#" class="nav__item">Наши контакты</a>
     </nav>
     <ul class="user-menu">
-        <li><a class="user-menu__item user-menu__item_active" href="#">Моя корзина</a></li>
-        <li><a class="user-menu__item" href="#">Выйти</a></li>
+        <li><a class="user-menu__item" href="#" th:text="#{trash}">Моя корзина</a></li>
+        <li><a class="user-menu__item" href="#" th:text="#{logout}">Выйти</a></li>
     </ul>
 </div>
 <main class="container content content_catalog">

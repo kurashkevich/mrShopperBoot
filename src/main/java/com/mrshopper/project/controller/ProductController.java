@@ -23,8 +23,9 @@ public class ProductController {
     DetailService detailService;
 
 
-    @GetMapping("/more")
-    public String getMoreInfo(){
+    @GetMapping("/more/{id}")
+    public String getMoreInfo(@PathVariable Long id, Model model){
+        model.addAttribute("product", productService.getProductById(id));
         return "product/product-info";
     }
     @GetMapping
