@@ -6,8 +6,22 @@ $(document).ready(function() {
     $('#maxDiagonal').click(function () {
 
     });
+    $('#en').click(function () {
+        i18n('en');
+    });
+    $('#ru').click(function () {
+        i18n('ru');
+    });
 
 });
+
+
+function i18n(locale) {
+    $(document).ready(function() {
+        var url = '/products/?lang=' + locale;
+        window.location.replace(url);
+    });
+}
 
 
 function filterLink(manufacturer, os, minDiagonal, maxDiagonal){
