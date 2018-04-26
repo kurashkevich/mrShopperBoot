@@ -20,13 +20,15 @@
 
 <body>
 <header class="header">
+    <h1 th:text="#{welcome.message}"></h1>
     <div class="container flex">
         <a href="http://localhost:8080" class="logo">
             <img src="/assets/common/imgs/logo-mr-shopper.svg" alt="mr. Shopper">
         </a>
         <div>
             <div class="language">
-                <a href="#" class="language__item" id="en">EN</a><a href="#" class="language__item language__item_active" id="ru">RU</a>
+                <a href="#" class="language__item" id="en" th:text="#{lang.eng}">EN</a>
+                <a href="#" class="language__item language__item_active" id="ru" th:text="#{lang.ru}">RU</a>
             </div>
             <form action="#" class="form form_search">
                 <input class="form__input form_search__input" type="search" placeholder="Search...">
