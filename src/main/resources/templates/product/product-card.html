@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mr. Shopper</title>
+    <link rel="stylesheet" href="/assets/common/css/grid.css">
+    <link rel="stylesheet" href="/assets/common/css/main.css">
+    <link rel="stylesheet" href="/assets/common/css/fonts.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <section class="products" id="productSession">
+        <div class = "productBlock">
+            <th:block th:each="product : ${products}">
+                <article id="productsTable" class="products__item product-card">
+                    <img src="/assets/content/img/products-imgs/001/sdfs.jpg" alt="dg">
+                    <h1 class="product-card__header" th:text="${product.manufacturer} + ' ' + ${product.detail.model}">Huawei P20 Lite ANE-LX1</h1>
+                    <div class="description" th:text="${product.detail.os} + ', ' + 'экран' +
+                    ' ' + ${product.detail.screenSize} + ' ' + 'дюймов' +
+                    ', ' + 'ОЗУ' + ' ' +${product.detail.ram} + 'ГБ' +
+                    ', ' + 'флеш-память' + ' ' + ${product.detail.rom} + 'ГБ'">
+
+                        Android, экран 5.84" IPS (1080x2280), HiSilicon Kirin 659, ОЗУ 4 ГБ, флэш-память 64 ГБ, карты памяти, камера 16 Мп, аккумулятор 3000 мАч, 2 SIM, цвет черный
+                    </div>
+                    <div class="btns-wrapper">
+                        <a href="#" class="btn btn_more">Подробнее</a>
+                        <a href="#" class="btn btn_add-to-cart">В корзину</a>
+                    </div>
+                </article>
+            </th:block>
+        </div>
+    </section>
+
+<script src="/assets/common/js/design.js"></script>
+<script src="/assets/js/util.js"></script>
+</body>
+
+</html>

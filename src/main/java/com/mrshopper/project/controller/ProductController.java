@@ -38,12 +38,12 @@ public class ProductController {
     public String getProductsByFilter(@RequestParam String manufacturer,@RequestParam String osName,
                                       @RequestParam String minD, @RequestParam String maxD, Model model){
         model.addAttribute("products", productService.getProductsByFilter(manufacturer, osName, minD, maxD));
-        return "product/mainPage";
+        return "product/product-card";
     }
     @GetMapping("/byOsName")
     public String getProductsByOsName(@RequestParam String manufacturer, @RequestParam String osName, Model model){
         model.addAttribute("products", productService.getProductsByOsName(manufacturer, osName));
-        return "product/mainPage";
+        return "product/product-card";
     }
 
     @Transactional

@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#searchByFilter').click(function () {
-        //searchByFilterBtn();
-        restSearchByFilterBtn();
+        searchByFilterBtn();
+        //restSearchByFilterBtn();
     });
     $('#maxDiagonal').click(function () {
 
@@ -32,7 +32,15 @@ function searchByFilterBtn() {
     var maxRam =$('#maxRam').val();
 
     var url = filterLink(manufacturer, os, minDiagonal, maxDiagonal);
-    $("#searchByFilter").attr("href", url);
+    $.ajax({
+        headers:"Accept: application/html",
+        type:'get',
+        dataType: "html",
+        url: url
+    }).done(function(data) {
+        $("section").html(data);
+    })
+    //$("#searchByFilter").attr("href", url);
 
 }
 
@@ -69,24 +77,12 @@ function restSearchByFilterBtn() {
         url: 'http://localhost:8080/productsRest?manufacturer=Samsung&osName=IOS&minD=3&maxD=7'
     }).done(function(data) {
         s=data[0].idProduct;
-
+        alert(s);
+        var el = ' <p> ' + s + ' </p>  ';
+        $(".productBlock").append(el);
     })
 
-    var el = ' <p>Test  </p>  ';
-    $(".test").append(el);
-
-
 }
-
-/*
-<div class="test">
-    <div id="1">привет1  привет2  привет3</div>
-</div>*/
-
-
-
-
-
 
 function changeLink(man) {
     var url = '/products/filter?manufacturer='+man;
