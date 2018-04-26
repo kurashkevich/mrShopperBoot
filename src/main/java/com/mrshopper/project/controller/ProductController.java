@@ -22,6 +22,11 @@ public class ProductController {
     @Autowired
     DetailService detailService;
 
+
+    @GetMapping("/more")
+    public String getMoreInfo(){
+        return "product/product-info";
+    }
     @GetMapping
     public String getProducts(Model model){
         model.addAttribute("products", productService.getProducts());

@@ -12,8 +12,17 @@ $(document).ready(function() {
     $('#ru').click(function () {
         i18n('ru');
     });
+    $('#moreBtn').click(function () {
+        getMoreInfo();
+    });
 
 });
+
+function getMoreInfo() {
+    var url = '/products/more';
+    window.location.replace(url);
+
+}
 
 
 function i18n(locale) {

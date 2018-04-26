@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mr. Shopper</title>
+    <link rel="stylesheet" href="/assets/common/css/grid.css">
+    <link rel="stylesheet" href="/assets/common/css/main.css">
+    <link rel="stylesheet" href="/assets/common/css/fonts.css">
+</head>
+<body>
+<header class="header">
+    <div class="container flex">
+        <a href="index.html" class="logo">
+            <img src="common/imgs/logo-mr-shopper.svg" alt="mr. Shopper">
+        </a>
+        <div>
+            <div class="language">
+                <a href="#" class="language__item" id="en">EN</a><a href="#" class="language__item language__item_active" id="ru">RU</a>
+            </div>
+            <form action="#" class="form form_search">
+                <input class="form__input form_search__input" type="search" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+</header>
+<div class="container flex flex_top">
+    <nav class="nav">
+        <a href="#" class="nav__item">Каталог</a>
+        <a href="#" class="nav__item">Наши контакты</a>
+    </nav>
+    <ul class="user-menu">
+        <li><a class="user-menu__item user-menu__item_active" href="#">Моя корзина</a></li>
+        <li><a class="user-menu__item" href="#">Выйти</a></li>
+    </ul>
+</div>
+<main class="container content content_catalog">
+    <form class="form form_my-contacts" id="myContacts">
+        <label class="form_filters__item">
+            <div>Ваше имя</div>
+            <input type="text" class="form__input form__user-name" id="userName" placeholder="Владислав">
+        </label>
+        <label class="form_filters__item">
+            <div>Ваш номер телефона</div>
+            <input type="tel" class="form__input form__user-phone" id="userPhone" placeholder="+37529 123-45-67">
+        </label>
+        <label class="form_filters__item">
+            <div>Адрес доставки</div>
+            <input type="text" class="form__input form__user-address" id="userAddress" placeholder="Валерьяново, Луговая, 7">
+        </label>
+        <div class="btns-wrapper">
+            <a href="#" class="btn btn_filters-apply">Сохранить изменения</a>
+        </div>
+    </form>
+    <section class="products">
+        <div class="products-wrapper">
+            <article class="products__item product-preview">
+                <img src="content/img/products-imgs/001/sdfs.jpg" alt="dg">
+                <h1 class="product-preview__header">Huawei P20 Lite ANE-LX1</h1>
+                <div class="description description_short">
+                    Android, экран 5.84" IPS (1080x2280), HiSilicon Kirin 659, ОЗУ 4 ГБ, флэш-память 64 ГБ, карты памяти, камера 16 Мп, аккумулятор 3000 мАч, 2 SIM, цвет черный
+                </div>
+                <div class="btns-wrapper">
+                    <a href="#" class="btn btn_delete">Удалить</a><a href="#" class="btn btn_more">Подробнее</a>
+                </div>
+            </article>
+            <article class="products__item product-preview">
+                <img src="content/img/products-imgs/001/sdfs.jpg" alt="dg">
+                <h1 class="product-preview__header">Huawei P20 Lite ANE-LX1</h1>
+                <div class="description description_short">
+                    Android, экран 5.84" IPS (1080x2280), HiSilicon Kirin 659, ОЗУ 4 ГБ, флэш-память 64 ГБ, карты памяти, камера 16 Мп, аккумулятор 3000 мАч, 2 SIM, цвет черный
+                </div>
+                <div class="btns-wrapper">
+                    <a href="#" class="btn btn_delete">Удалить</a><a href="#" class="btn btn_more">Подробнее</a>
+                </div>
+            </article>
+        </div>
+        <a href="#" class="btn btn_pay">Подтвердить заказ</a>
+    </section>
+
+</main>
+<footer class="footer">
+    <div class="container">
+        © All rights reserved, 2018
+    </div>
+</footer>
+
+
+
+
+
+
+
+<script src="/assets/common/js/design.js"></script>
+</body>
+
+</html>
