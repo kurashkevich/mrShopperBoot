@@ -17,7 +17,7 @@
             <th:block th:each="product : ${products}">
                 <article id="productsTable" class="products__item product-preview">
                     <img src="/assets/common/imgs/001/pict.jpg" alt="dg">
-                    <h1 class="product-card__header" th:text="${product.idProduct} + ' ' + ${product.manufacturer} + ' ' + ${product.detail.model}">Huawei P20 Lite ANE-LX1</h1>
+                    <h1 class="product-card__header" th:text="${product.manufacturer} + ' ' + ${product.detail.model}">Huawei P20 Lite ANE-LX1</h1>
                     <div class="description" th:text="${product.detail.os} + ', ' + 'экран' +
                     ' ' + ${product.detail.screenSize} + ' ' + 'дюймов' +
                     ', ' + 'ОЗУ' + ' ' +${product.detail.ram} + 'ГБ' +
